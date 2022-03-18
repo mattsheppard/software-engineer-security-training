@@ -1,0 +1,20 @@
+name: Build slides
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+     - uses: actions/checkout@v1
+     - run: |
+        echo "A initial message"
+        echo "Another message or command"
+        bash build.sh -xe
+     - run: echo "One last message"
