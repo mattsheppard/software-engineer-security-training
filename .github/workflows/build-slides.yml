@@ -18,8 +18,8 @@ jobs:
         chmod a+w target
         bash build.sh -xe
      - name: Release
-        uses: softprops/action-gh-release@v1
+       uses: softprops/action-gh-release@v1
         # if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: target/slides.pdf
+       with:
+         files: target/slides.pdf
 
