@@ -16,5 +16,6 @@ jobs:
      - run: |
         echo "A initial message"
         echo "Another message or command"
+        chmod a+w target
         bash build.sh -xe
      - run: echo "One last message"
