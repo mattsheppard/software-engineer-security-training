@@ -14,8 +14,12 @@ jobs:
     steps:
      - uses: actions/checkout@v1
      - run: |
-        echo "A initial message"
-        echo "Another message or command"
+        echo "Building slides in various formats"
         chmod a+w target
         bash build.sh -xe
-     - run: echo "One last message"
+     - name: Release
+        uses: softprops/action-gh-release@v1
+        # if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: target/slides.pdf
+
